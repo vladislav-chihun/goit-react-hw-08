@@ -1,9 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import css from "./ContactForm.module.css";
 import { useDispatch, useSelector} from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/contactsOps";
 import * as Yup from "yup";
-import { selectIsError, selectIsLoading } from "../../redux/selectors";
+import { selectIsError, selectIsLoading } from "../../redux/filters/selectors";
 
 const contactSchema = Yup.object().shape({
     nameField: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),

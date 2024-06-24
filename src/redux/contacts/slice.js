@@ -1,5 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "../contacts/contactsOps";
+import { fetchContacts, addContact, deleteContact } from "../contacts/operations";
 import { selectFilters, selectItems } from "../filters/selectors";
 
 

@@ -3,7 +3,7 @@ import css from "./ContactForm.module.css";
 import { useDispatch, useSelector} from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import * as Yup from "yup";
-import { selectIsError, selectIsLoading } from "../../redux/filters/selectors";
+import { selectIsError, selectIsLoading } from "../../redux/contacts/selectors";
 
 const contactSchema = Yup.object().shape({
     nameField: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),

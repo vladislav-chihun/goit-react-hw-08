@@ -11,29 +11,57 @@ const authSlice = createSlice({
         token: null,
         isLoggedIn: false,
         isRefreshing: false,
-        isLoading:false
+        isLoading: false,
+        isError: false
     },
-    extraReducers: builder => builder.addCase(register.pending, (state,action) => {
-        state.isLoading = true
-    }).addCase(register.fulfilled, (state, action) => {
-        state.user = action.payload.user
-        state.token = action.payload.token
-        state.isLoading = false
-        state.isLoggedIn = true
-    }).addCase(logIn.fulfilled, (state, action) => {
-        state.user = action.payload.user
-        state.token = action.payload.token
-        state.isLoggedIn = true
-    }).addCase(logOut.fulfilled, (state) => {
+    extraReducers: builder => builder
+        .addCase(register.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(register.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoading = false;
+        state.isLoggedIn = true;
+      })
+      .addCase(register.rejected, (state) => {
+        state.isLoading = false;
+        state.isLoggedIn = false;
+        state.isError = true;
+      })
+      .addCase(logIn.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoading = false;
+        state.isLoggedIn = true;
+      })
+      .addCase(logIn.rejected, (state) => {
+        state.isLoading = false;
+        state.isLoggedIn = false;
+        state.isError = true;
+      })
+      .addCase(logOut.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(logOut.fulfilled, (state) => {
+        state.isLoading = false;
         state.user = {
-            name: null,
-            email:null
+          name: null,
+          email: null,
         };
         state.token = null;
         state.isLoggedIn = false;
-        state.isLoading = false
-            
-    })
+      })
+      .addCase(logOut.rejected, (state) => {
+        state.isError = true;
+        state.isLoading = false;
+      })
 
 })
 export default authSlice.reducer

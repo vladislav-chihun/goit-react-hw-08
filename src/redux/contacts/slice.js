@@ -44,11 +44,9 @@ const sliceContact = createSlice({
             state.error = false;
             state.loading = false;
             
-        }).addCase(logOut.fulfilled, (state,) => {
-            state.contacts.items = "";
-            state.contacts.loading = false;
-            state.contacts.error = null;
-        })
+        }).addCase(logOut.fulfilled, (state) => {
+                state.items = [];
+            });
     },
 });
 

@@ -4,7 +4,7 @@ import HomePage from "./components/HomePage/HomePage"
 import {LoginPage} from "./components/LoginPage/LoginPage"
 import ContactsPage from "./components/ContactsPage/ContactsPage"
 import { useDispatch, useSelector } from "react-redux"
-import { useEffect } from "react"
+import { Suspense, useEffect } from "react"
 import { refreshUser } from "./redux/auth/operations"
 import { selectIsRefreshing } from "./redux/auth/selectors"
 import RestrictedRoute from "./components/RestrictedRoute"
@@ -25,8 +25,8 @@ function App() {
   return isRefreshing ? (
     <div>Loading...</div>
   ):(
-      <div>
-        <Layout>
+      <Layout>
+        <Suspense>
           <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RestrictedRoute component={<RegestrationForm />} />} />
@@ -34,9 +34,8 @@ function App() {
           <Route path="/contacts" element={<PrivateRoute component={<ContactsPage />} />} />
           <Route path="*" element={<NotFoundPage />}/>
           </Routes>
+        </Suspense>
         </Layout>
-      </div>
-
   )
 }
 export default App

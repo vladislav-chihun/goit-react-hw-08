@@ -23,7 +23,7 @@ function App() {
  
   
   return isRefreshing ? (
-    <div>Loading...</div>
+    <div className={css.loading}>Loading...</div>
   ):(
       <Layout>
         <Suspense>

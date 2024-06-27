@@ -1,0 +1,14 @@
+.notFoundPageHpmeBtn {
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: large;
+}
+.notFoundPageHpmeBtn:hover {
+  text-decoration: underline;
+}
+.notFoundContainer {
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  font-size: large;
+}

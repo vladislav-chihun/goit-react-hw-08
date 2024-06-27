@@ -1,0 +1,15 @@
+.logoutBtn {
+  color: black;
+  background-color: gray;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: large;
+  transition: color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
+    background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: none;
+  margin-right: 70px;
+}
+.logoutBtn:hover {
+  color: white;
+  background-color: black;
+}

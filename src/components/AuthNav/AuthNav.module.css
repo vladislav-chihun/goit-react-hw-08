@@ -1,0 +1,21 @@
+.navigationList {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 20px;
+  margin-right: 70px;
+}
+.link {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+  background-color: gray;
+  padding: 8px;
+  border-radius: 10px;
+  transition: color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
+    background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.link:hover {
+  color: white;
+  background-color: black;
+}

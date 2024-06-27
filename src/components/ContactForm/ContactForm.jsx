@@ -27,19 +27,19 @@ export default function ContactForm() {
 
     return (
         <Formik initialValues={{ nameField: "", numberField: "" }} validationSchema={contactSchema} onSubmit={handleSubmit}>
-            <Form className={css.form}>
+            <Form className={css.contactForm}>
                 {isLoading && <p>Loading...</p>}
-                <div className={css.nameContainer}>
-                    <label htmlFor="nameField">Name</label>
-                    <Field type="text" name="nameField" id="nameField" />
-                    {isError && <ErrorMessage name="nameField" component="div" className={css.errorMessage} />}
+                <div className={css.contactFieldContainer}>
+                    <label htmlFor="nameField" className={css.contactLabel}>Name</label>
+                    <Field className={css.contactField} type="text" name="nameField" id="nameField" />
+                    <ErrorMessage name="nameField" component="div" className={css.errorMessage} />
                 </div>
-                <div className={css.numberContainer}>
-                    <label htmlFor="numberField">Number</label>
-                    <Field type="text" name="numberField" id="numberField" />
-                    {isError && <ErrorMessage name="numberField" component="div" className={css.errorMessage} />}
+                <div className={css.contactFieldContainer}>
+                    <label htmlFor="numberField" className={css.contactLabel}>Number</label>
+                    <Field className={css.contactField} type="text" name="numberField" id="numberField" />
+                    <ErrorMessage name="numberField" component="div" className={css.errorMessage} />
                 </div>
-                <button name="AddContactField" type="submit" className={css.btn}>Add contact</button>
+                <button name="AddContactField" type="submit" className={css.contactBtn}>Add contact</button>
             </Form>
         </Formik>
     );

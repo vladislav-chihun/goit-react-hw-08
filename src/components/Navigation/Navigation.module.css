@@ -12,6 +12,21 @@
   transition: color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
     background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+.navHome {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+  background-color: gray;
+  padding: 8px;
+  border-radius: 10px;
+  transition: color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
+    background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  margin-left: 10px;
+}
+.navHome:hover {
+  color: white;
+  background-color: black;
+}
 .navLink:hover {
   color: white;
   background-color: black;

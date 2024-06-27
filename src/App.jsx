@@ -11,6 +11,7 @@ import RestrictedRoute from "./components/RestrictedRoute"
 import PrivateRoute from "./components/PrivateRoute"
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage"
 import Layout from "./components/Layout/Layout"
+import css from "./App.module.css"
 
 
 function App() {

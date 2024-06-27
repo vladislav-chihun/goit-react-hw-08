@@ -13,3 +13,13 @@
   color: white;
   background-color: black;
 }
+.userNav {
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeTxt {
+  margin-right: 20px;
+  font-size: large;
+}
